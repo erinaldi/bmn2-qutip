@@ -3,38 +3,51 @@
 # %%
 import pandas as pd
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-plt.style.use('./paper.mplstyle')
 
-# %% 
-l = "2.0"
-ls = l.replace(".", "")
-print(f"l{ls}_gv.csv")
-data = pd.read_csv(
-    f"l{ls}_gv.csv", header=0, dtype={"Lambda": int, "GaugeViolation": float}
-)
+plt.style.use("../figures/paper.mplstyle")
+import fire
+
 # %%
-fig, ax = plt.subplots()
-data[::2].plot(
-    x="Lambda",
-    y="GaugeViolation",
-    marker="o",
-    label=fr"$\lambda$={l} (O)",
-    logy=True,
-    ax=ax,
-)
-data[1::2].plot(
-    x="Lambda",
-    y="GaugeViolation",
-    marker="o",
-    label=fr"$\lambda$={l} (E)",
-    logy=True,
-    ax=ax,
-)
-ax.set_ylabel(r"$\langle G^2 \rangle$", rotation=90)
-ax.set_xlabel(r"$\Lambda$")
-ax.grid()
-plt.savefig(f"l{ls}_gv.pdf")
-plt.savefig(f"l{ls}_gv.png")
+def main(l: float = 0.2):
+    """Generate plots in the figures folder for the gauge constraint violation from data files in the data folder.
+    Only for the ground state.
+
+    Args:
+        l (float, optional): The 't Hooft coupling lambda. Defaults to 0.2.
+    """
+    ls = str(l).replace(".", "")
+    filename = f"../data/l{ls}_gv.csv"
+    print(filename)
+    data = pd.read_csv(filename, header=0, dtype={"Lambda": int})
+
+    # %%
+    fig, ax = plt.subplots()
+    data[::2].plot(
+        x="Lambda",
+        y="GaugeViolation",
+        marker="o",
+        label=fr"$\lambda$={l} (O)",
+        logy=True,
+        ax=ax,
+    )
+    data[1::2].plot(
+        x="Lambda",
+        y="GaugeViolation",
+        marker="o",
+        label=fr"$\lambda$={l} (E)",
+        logy=True,
+        ax=ax,
+    )
+    ax.set_ylabel(r"$\langle G^2 \rangle$", rotation=90)
+    ax.set_xlabel(r"$\Lambda$")
+    ax.grid()
+    plt.savefig(f"../figures/l{ls}_gv.pdf")
+    plt.savefig(f"../figures/l{ls}_gv.png")
+
+
 # %%
+if __name__ == "__main__":
+    fire.Fire(main)
