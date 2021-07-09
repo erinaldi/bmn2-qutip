@@ -5,16 +5,16 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-plt.style.use('../figures//paper.mplstyle')
+plt.style.use('../figures/paper.mplstyle')
 import fire
 # %%
-def main(l: float):
+def main(l: float = 0.2):
     """Generate plots in the figures folder for the gauge constraint violation from data files in the data folder.
 
     Args:
         l (float): the 't Hooft coupling lambda
     """
-    ls = l.replace(".", "")
+    ls = str(l).replace(".", "")
     filename = f"../data/l{ls}_mini_gv.csv"
     print(filename)
     data = pd.read_csv(filename, header=0, dtype={"Lambda": int})
