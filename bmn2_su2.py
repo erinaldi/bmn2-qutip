@@ -243,7 +243,7 @@ def main(num_eigs: int, L_range: list, l_range: list, j: float):
         gm = []
         for cutoff in cutoff_range:
             penalty_L = cutoff  # coefficient of G^2
-            penalty_m = 100.0  # coefficient of (M-J)^2
+            penalty_m = 10.0*cutoff  # coefficient of (M-J)^2
             hamiltonian_orig = build_hamiltonian(cutoff, Nbos, Nf, g)
             G2_ops = build_gauge_generators(cutoff, Nbos, Nf)
             M_ops = build_rotation_generators(cutoff, Nbos, Nf)
