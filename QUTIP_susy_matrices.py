@@ -549,7 +549,7 @@ print("Expectation values M:", expect(m_sum, eigk_H_l))
 # %%
 # we choose the penalty coefficient equal to the cutoff for the bosons
 penalty_l = L
-penalty_m = 1
+penalty_m = 10.0*L
 J = 0  # {0,0.5}
 H_ml = H + penalty_l * g_sum + penalty_m * (m_sum - J) ** 2
 
