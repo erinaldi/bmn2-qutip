@@ -1,0 +1,19 @@
+name: qutip-env
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - jupyter
+  - qutip
+  - black
+  - pip:
+    - fire
+    
