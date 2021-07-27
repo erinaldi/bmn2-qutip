@@ -29,7 +29,7 @@ def build_operators(L: int, N_bos: int) -> list:
         a_b_list.append(
             tensor(operator_list)
         )  # do the outer product, add .unit() to tensor if you want it normalized but it will take a long
- 
+
     return a_b_list
 
 

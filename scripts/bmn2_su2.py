@@ -216,7 +216,7 @@ def print_out(Ls, Es, name):
         print(a, *b, sep=",")
 
 
-def main(num_eigs: int, L_range: list, l_range: list, j: float):
+def main(num_eigs: int, L_range: list, l_range: list, j: float, penalty: bool = True):
     """Run the eigensolver (sparse) for the Hamiltonian of 6 bosons and 3 fermions with penalty terms.
     The cutoff for each boson is given by the L_range list and the coupling constant ('t Hooft) is given by
     the l_range list. The eigensolver returns num_eigs eigenvalues and eigenvectors from the lowest energy.
@@ -228,6 +228,7 @@ def main(num_eigs: int, L_range: list, l_range: list, j: float):
         L_range (list): list of cutoff values to use for each boson
         l_range (list): list of 't Hooft coupling constants
         j (float): the angular momentum sector
+        penalty (bool): if the eigenvectors should come from the Hamiltonian with penalty terms
     """
     Nbos = 6  # fixed for SU(2) with 2 matrices: number of bosons
     Nf = 3  # fixed for SU(2) with 2 matrices in the mini-BMN model
@@ -243,13 +244,15 @@ def main(num_eigs: int, L_range: list, l_range: list, j: float):
         gm = []
         for cutoff in cutoff_range:
             penalty_L = cutoff  # coefficient of G^2
-            penalty_m = 10.0*cutoff  # coefficient of (M-J)^2
+            penalty_m = 10.0 * cutoff  # coefficient of (M-J)^2
             hamiltonian_orig = build_hamiltonian(cutoff, Nbos, Nf, g)
             G2_ops = build_gauge_generators(cutoff, Nbos, Nf)
             M_ops = build_rotation_generators(cutoff, Nbos, Nf)
-            hamiltonian_p = build_penalty_hamiltonian(
-                hamiltonian_orig, G2_ops, M_ops, penalty_L, penalty_m, ang_mom
-            )
+            hamiltonian_p = hamiltonian_orig.copy()
+            if penalty:
+                hamiltonian_p = build_penalty_hamiltonian(
+                    hamiltonian_orig, G2_ops, M_ops, penalty_L, penalty_m, ang_mom
+                )
             print(f"--- Computing eigenvalues at cutoff: {cutoff}")
             _, eigk = hamiltonian_p.eigenstates(
                 sparse=True, sort="low", eigvals=num_eig, tol=0
