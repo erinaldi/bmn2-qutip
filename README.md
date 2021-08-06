@@ -1,7 +1,7 @@
 # Matrix Quantum Mechanics with Qutip
 
 The quantum mechanics of matrix models is solved using the Quantum Toolbox in Python ([qutip](www.qutip.org)).
-Results are reported in the publication [Rinaldi et. al. (2021)](www.arxiv.org/abs/2108.00000).
+Results are reported in the publication [Rinaldi et al. (2021)](www.arxiv.org/abs/2108.00000).
 Consider the citation in [Cite](#cite).
 
 We select two matrix models to study:
