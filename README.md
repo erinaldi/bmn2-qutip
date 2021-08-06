@@ -2,6 +2,7 @@
 
 The quantum mechanics of matrix models is solved using the Quantum Toolbox in Python ([qutip](www.qutip.org)).
 Results are reported in the publication [Rinaldi et. al. (2021)](www.arxiv.org/abs/2108.00000).
+Consider the citation in [Cite](#cite).
 
 We select two matrix models to study:
 
@@ -62,7 +63,7 @@ Use the two links below to open the notebooks in a new tab:
 
 - [![Bosonic model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)]
 
-- [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/weiji14/deepbedmap/]
+- [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)]
 
 
 # Cite
