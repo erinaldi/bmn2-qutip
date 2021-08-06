@@ -63,7 +63,7 @@ Use the two links below to open the notebooks in a new tab:
 
 - [![Bosonic model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)]
 
-- [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)]
+- [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TXSzdcUGudCVJAQZTle1cPyhSN-BZQAr?usp=sharing)]
 
 
 # Cite
