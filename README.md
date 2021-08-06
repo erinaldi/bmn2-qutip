@@ -61,9 +61,9 @@ The Jupyter notebooks [QUTIP_bosonic_matrices](./notebooks/QUTIP_bosonic_matrice
 If you do not want to build the python environment to run them (see [Installation](#installation)) you can use [Google Colaboratory](colab.research.google.com) to run them in your web browser.
 Use the two links below to open the notebooks in a new tab:
 
-- [![Bosonic model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)]
+- Bosonic model: [![Bosonic model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1U_H6Fl9AWkUsMLZQ_bawVvRT-vJDTHz5?usp=sharing)
 
-- [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TXSzdcUGudCVJAQZTle1cPyhSN-BZQAr?usp=sharing)]
+- Supersymmetric model: [![Susy model in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TXSzdcUGudCVJAQZTle1cPyhSN-BZQAr?usp=sharing)
 
 
 # Cite
