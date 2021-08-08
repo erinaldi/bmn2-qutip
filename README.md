@@ -21,16 +21,16 @@ With a regular desktop (64GB of RAM) it is possible to reach cutoffs Λ=14 or sl
 There is a `environment.yml` file that can be used to build a `conda` python environment with all the dependencies needed to run the scripts and notebooks in this repository.
 
 If you have `conda` installed (see [this link](https://docs.conda.io/projects/conda/en/latest/) if you need help), you can run 
-```shell
+```bash
 conda env create -f environment.yml
 ```
 and then check that the environement has been created
-```shell
+```bash
 conda env list
 ```
 
 If the environment appears in the output of the command above, you can activate it with
-```shell
+```bash
 conda activate qutip-env
 ```
 and then run the scripts and notebooks in this repository.
@@ -40,12 +40,12 @@ and then run the scripts and notebooks in this repository.
 To generate the spectrum of the bosonic matrix model with a specific list of cutoffs and for a specific list of 't Hooft coupling constants you can run the [scripts/bmn2_bos_su2.py](./scripts/bmn2_bos_su2.py) script from the command line
 
 For a list of options to pass on the command line, run
-```shell
+```bash
 python scripts/bmn2_bos_su2.py --help
 ```
 
 An example, you can run
-```shell
+```bash
 python scripts/bmn2_bos_su2.py --num_eigs=20 --L_range=[3,5,7] --l_range=[0.2] --penalty=False
 ```
 to get the first 20 eigenstates of the truncated Hamiltonian with cutoff Λ equal to 3, 5, and 7 at coupling constant 0.2 and without introducing a penalty term for the gauge non-singlet states.
@@ -56,7 +56,7 @@ The rest of the scripts are just utilities for making plots.
 
 **Note**: you can take advantage of multi-threading on a single node by changing the `OMP_NUM_THREAD` environment variable before calling `python`.
 For example:
-```shell
+```bash
 export OMP_NUM_THREADS=12 ; python scripts/bmn2_bos_su2.py --num_eigs=20 --L_range=[3,5,7] --l_range=[0.2] --penalty=False
 ```
 will run the script using 12 cores.
