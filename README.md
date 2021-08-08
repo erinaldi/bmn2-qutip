@@ -54,6 +54,12 @@ Similarly, you can study the spectrum of the supersymmetric matrix model with th
 
 The rest of the scripts are just utilities for making plots.
 
+**Note**: you can take advantage of multi-threading on a single node by changing the `OMP_NUM_THREAD` environment variable before calling `python`.
+For example:
+```shell
+export OMP_NUM_THREADS=12 ; python scripts/bmn2_bos_su2.py --num_eigs=20 --L_range=[3,5,7] --l_range=[0.2] --penalty=False
+```
+will run the script using 12 cores.
 ## Notebooks
 
 The Jupyter notebooks [QUTIP_bosonic_matrices](./notebooks/QUTIP_bosonic_matrices.ipynb) and [QUTIP_susy_matrices](./notebooks/QUTIP_susy_matrices.ipynb) give an interactive explanation on how to build the regularized Hamiltonians of the matrix models using `qutip`.
