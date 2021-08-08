@@ -75,6 +75,13 @@ Use the two links below to open the notebooks in a new tab:
 # Cite
 
 If you use this code (or parts of it), please consider citing our paper:
-```
-BIBTEX CITATION HERE
+```bibtex
+@article{rinaldi2021matrixmodels,
+    title   = {Matrix Model simulations using Quantum Computing, Deep Learning, and Lattice Monte Carlo}, 
+    author  = {Rinaldi, Enrico and Han, Xizhi and Hassan, Mohammad and Feng, Yuan and Nori, Franco and McGuigan, Michael and Hanada, Masanori},
+    year    = {2021},
+    eprint  = {2108.00000},
+    archivePrefix = {arXiv},
+    primaryClass = {quant-ph}
+}
 ```
